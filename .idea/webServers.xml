@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="2f7f5244-e34f-48ca-a397-10203eea6e8f" name="korus-testing">
+        <fileTransfer rootFolder="/home/bitrix/www" accessType="SFTP" host="192.168.0.58" port="22" sshConfigId="c959bd4b-9cb7-4737-b43d-2b006d344886" sshConfig="root@192.168.0.58:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

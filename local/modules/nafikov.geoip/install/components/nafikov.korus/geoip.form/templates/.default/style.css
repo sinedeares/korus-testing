@@ -1,0 +1,245 @@
+/* Стили для компонента GeoIP формы */
+
+.geoip-form {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.geoip-form__container {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+.geoip-form__title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 24px 0;
+    text-align: center;
+}
+
+.geoip-form__search {
+    margin-bottom: 24px;
+}
+
+.geoip-form__input-group {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.geoip-form__input {
+    flex: 1;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+}
+
+.geoip-form__input:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+.geoip-form__input:invalid {
+    border-color: #f44336;
+}
+
+.geoip-form__button {
+    padding: 12px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.geoip-form__button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.geoip-form__button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.geoip-form__loader {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ffffff;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.geoip-form__hint {
+    color: #666;
+    font-size: 14px;
+    display: block;
+    margin-top: 8px;
+}
+
+/* Результаты */
+.geoip-form__result {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 24px;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.geoip-form__result-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.geoip-form__result-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.geoip-form__badge {
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.geoip-form__badge--cache {
+    background: #4CAF50;
+    color: #ffffff;
+}
+
+.geoip-form__badge--provider {
+    background: #2196F3;
+    color: #ffffff;
+}
+
+.geoip-form__data {
+    display: grid;
+    gap: 12px;
+}
+
+.geoip-form__data-row {
+    display: flex;
+    align-items: baseline;
+    padding: 8px 0;
+}
+
+.geoip-form__label {
+    font-weight: 600;
+    color: #555;
+    min-width: 150px;
+}
+
+.geoip-form__value {
+    color: #333;
+    flex: 1;
+}
+
+/* Ошибка */
+.geoip-form__error {
+    background: #ffebee;
+    border: 1px solid #f44336;
+    border-radius: 8px;
+    padding: 16px;
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.geoip-form__error-icon {
+    font-size: 24px;
+}
+
+.geoip-form__error-message {
+    color: #c62828;
+    font-weight: 500;
+}
+
+/* Статистика */
+.geoip-form__stats {
+    margin-top: 24px;
+    padding: 16px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.geoip-form__stats h4 {
+    margin: 0 0 12px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.geoip-form__stats p {
+    margin: 8px 0;
+    color: #666;
+}
+
+.geoip-form__stats ul {
+    margin: 8px 0;
+    padding-left: 20px;
+}
+
+.geoip-form__stats li {
+    color: #666;
+    margin: 4px 0;
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    .geoip-form__input-group {
+        flex-direction: column;
+    }
+
+    .geoip-form__button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .geoip-form__data-row {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .geoip-form__label {
+        min-width: auto;
+    }
+}
